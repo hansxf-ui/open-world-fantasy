@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Open World Fantasy</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="game"></div>
+<div id="fps">FPS: --</div>
+
+<div id="loading">
+  <svg class="emblem" viewBox="0 0 64 64" aria-hidden="true"><rect x="29" y="34" width="6" height="14" fill="#8a6a4a"/><path d="M32 6 L50 36 H14 Z" fill="#7fae7a"/><rect x="14" y="50" width="5" height="8" fill="#fff8ec"/><path d="M8 52 Q16 40 24 52 Z" fill="#5aa8a0"/><circle class="fly" cx="52" cy="16" r="3" fill="#e8905a"/></svg>
+  <p id="loadingStage" role="status" aria-live="polite">Memuat dunia…</p>
+  <div class="fireflies" aria-hidden="true"><span></span><span></span><span></span></div>
+</div>
+
+<div id="entry">
+  <svg class="scene" viewBox="0 0 400 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <circle cx="320" cy="90" r="34" fill="#ffd98c"/>
+    <path d="M0 420 Q100 360 200 400 T400 390 V760 H0 Z" fill="#c4d6b8"/>
+    <path d="M0 520 Q120 460 240 510 T400 500 V760 H0 Z" fill="#a8c3a0"/>
+    <path d="M0 620 Q200 590 400 630 V760 H0 Z" fill="#e8d0a0"/>
+    <g><rect x="57" y="420" width="8" height="26" fill="#8a6a4a"/><path d="M61 360 L82 424 H40 Z" fill="#7fae7a"/><path d="M61 390 L78 432 H44 Z" fill="#6b9e6b"/></g>
+    <g><rect x="296" y="400" width="9" height="30" fill="#8a6a4a"/><path d="M300 330 L326 408 H274 Z" fill="#7fae7a"/><path d="M300 366 L320 414 H280 Z" fill="#6b9e6b"/></g>
+    <g><rect x="148" y="452" width="7" height="22" fill="#8a6a4a"/><path d="M151 398 L170 452 H132 Z" fill="#7fae7a"/></g>
+    <circle class="fly" cx="90" cy="470" r="4" fill="#fdf6c8"/>
+    <circle class="fly" cx="210" cy="430" r="4" fill="#fdf6c8" style="animation-delay:1.4s"/>
+    <circle class="fly" cx="340" cy="540" r="4" fill="#fdf6c8" style="animation-delay:2.6s"/>
+    <g><rect x="97" y="636" width="6" height="12" fill="#fff8ec"/><path d="M88 638 Q100 618 112 638 Z" fill="#5aa8a0"/></g>
+    <g><rect x="327" y="656" width="6" height="12" fill="#fff8ec"/><path d="M318 658 Q330 638 342 658 Z" fill="#e8905a"/></g>
+  </svg>
+  <div class="panel">
+    <h1>Open World <span>Fantasy</span></h1>
+    <p class="tag">Jelajahi dunia santai bareng teman. Tanpa target, tanpa skor, jalan-jalan aja.</p>
+    <label for="nameInput">Nama kamu</label>
+    <input id="nameInput" type="text" maxlength="20" placeholder="Nama kamu" autocomplete="off">
+    <span class="field-label">Warna baju</span>
+    <div id="swatches"></div>
+    <span class="field-label">Karakter</span>
+    <div id="genderPicker"></div>
+    <button id="enterBtn">Masuk Dunia</button>
+    <p class="foot">Masuk, jalan-jalan, sapa pemain lain lewat chat.</p>
+  </div>
+</div>
+
+<div id="hud" class="hidden">
+  <div id="joystick"><div id="stick"></div></div>
+  <button id="jumpBtn">Lompat</button>
+  <button id="chatBtn">Chat</button>
+  <button id="muteBtn">🔊</button>
+  <div id="zoneToast"></div>
+  <div id="netStatus" style="display:none"></div>
+  <canvas id="minimap" width="120" height="120"></canvas>
+  <div id="chatPanel" class="hidden">
+    <div id="chatLines"></div>
+    <input id="chatInput" type="text" maxlength="120" placeholder="Tulis pesan..." autocomplete="off">
+  </div>
+</div>
+
+<script src="js/vendor/mqtt.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
